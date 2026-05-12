@@ -4,8 +4,10 @@ import React from 'react';
 
 const NavBar = () => {
     return (
-        <nav className="navbar flex justify-between m-5">
-            <ul className='flex gap-6'>
+        <nav className="flex flex-col md:flex-row items-center justify-between px-5 py-4 gap-4">
+            
+            {/* Left side-bar */}
+            <ul className='flex flex-col md:flex-row items-center gap-4 md:gap-6'>
                 <li>
                     <Link href={'/'}>Home</Link>
                 </li>
@@ -15,6 +17,9 @@ const NavBar = () => {
                 <li> 
                     <Link href={"/my-bookings"}>My Bookings</Link>
                 </li>
+                <li> 
+                    <Link href={"/add-destination"}>Add Destionation</Link>
+                </li>
             </ul>
 
             <div>
@@ -23,7 +28,7 @@ const NavBar = () => {
             </div>
 
             <div className=''>
-                <ul className='flex gap-6'>
+                <ul className='flex flex-col md:flex-row items-center gap-4 md:gap-6'>
                     <li>
                         <Link href={'/profile'}>Profile</Link>
                     </li>
