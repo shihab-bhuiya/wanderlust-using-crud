@@ -1,8 +1,15 @@
+"use client"
+
+import { authClient } from '@/lib/auth-client';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
 const NavBar = () => {
+    const {
+        data:session,
+    }  = authClient.useSession()
+    console.log(session);
     return (
         <nav className="flex flex-col md:flex-row items-center justify-between px-5 py-4 gap-4">
             
@@ -36,7 +43,7 @@ const NavBar = () => {
                         <Link href={'/login'}>Login</Link>
                     </li>
                     <li>
-                        <Link href={'/sign-up'}>Sign Up</Link>
+                        <Link href={'/signup'}>Sign Up</Link>
                     </li>
                 </ul>
             </div>
